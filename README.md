@@ -20,9 +20,8 @@ I created a separate `WebinarCard` component to keep the code modular and clean.
 
 At first, I was confused about how to pass `id` to the button’s `onClick` and log it properly. I was trying to return the index with the map function but that was not working well so I ended up revisiting the code and mention the id in the arrray itself which was carrying the data of the webinars
 
-```js
-const handleViewDetails = () => {
-  console.log(`Viewing details for webinar ID: ${id}`);
-}
 
 
+
+## 📱 Preview
+![image](https://github.com/user-attachments/assets/9b872ae1-d487-4a7a-8710-f2676aac1eb1)
