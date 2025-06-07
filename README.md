@@ -10,7 +10,9 @@ https://babynama-webinar.vercel.app/
 
 ## ⚙️ Choices Made
 
-I created a separate `WebinarCard` component to keep the code modular and clean. It helped in reusing the card structure and isolating UI logic like modals and event handling. Also to make it more beautifyl I choose to create the relevant images using the AI which are then stored in the public folder (alternatively we can store the image link to db and can fetch from there).
+I created a separate `WebinarCard` component to keep the code modular and clean. It helped in reusing the card structure and isolating UI logic like modals and event handling. Also to make it more beautifyl I choose to create the relevant images using the AI which are then stored in the public folder (alternatively we can store the image link to db and can fetch from there).Along with a modal popup for details instead of navigating to a new page so that users don’t lose their current view and can close it quickly.
+
+
 
 ---
 
