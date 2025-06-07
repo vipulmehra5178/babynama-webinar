@@ -11,6 +11,8 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gray-50">
+              <title>My Custom Page Title</title>
+
       <div className="text-center">
         <Image
           src="https://babynama.com/_next/static/media/logo-light.f8d530c6.svg"

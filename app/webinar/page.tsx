@@ -48,7 +48,7 @@ const webinars = [
     }
   },{
     id:4,
-  title: 'Sleep Training for Infants',
+  title: 'Sleep Training for Infants with Templates',
   shortDesc: 'Tips and techniques to help your baby sleep better.',
   date: 'July 2, 2025',
   speaker: 'Dr. Kavita Narayan',
@@ -79,7 +79,7 @@ const webinars = [
 {
   id:6,
   title: 'Baby’s First Year: Growth & Milestones',
-  shortDesc: 'Track and understand your child’s physical and mental milestones.',
+  shortDesc: 'Track & understand your child’s mental milestones.',
   date: 'July 15, 2025',
   speaker: 'Dr. Arjun Iyer',
   thumbnail: '/106.png',
