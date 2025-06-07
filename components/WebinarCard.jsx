@@ -11,6 +11,7 @@ export default function WebinarCard({
   speaker,
 }) {
   const [showModal, setShowModal] = useState(false);
+
   const handleViewDetails = () => {
     console.log(`Viewing details for webinar ID: ${id}`);
     setShowModal(true);
@@ -18,34 +19,25 @@ export default function WebinarCard({
 
   return (
     <>
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 max-w-sm">
-        {/* Fixed-size image container */}
+      <div className="bg-white rounded-2xl shadow-md overflow-hidden transition hover:shadow-xl max-w-sm mx-auto">
         <div className="w-[400px] h-[250px] relative">
           <Image
-          src={thumbnail}
-          alt="Webinar Thumbnail"
-          width={400}
-          height={250}
+            src={thumbnail}
+            alt="Webinar Thumbnail"
+            width={400}
+            height={250}
           className="w-full h-[250px] object-cover"
-        />
+           />
         </div>
 
-        <div className="p-4">
-          {/* Title and date */}
-          <h2 className="text-xl font-bold mb-1">{title}</h2>
-          <p className="text-sm text-gray-500 mb-2">{date}</p>
+        <div className="p-5">
+          <h2 className="text-xl font-bold text-blue-900 mb-1">{title}</h2>
+          <p className="text-sm text-gray-500 mb-1">📅 {date}</p>
+          <p className="text-base font-medium text-gray-700 mb-2">👤 {speaker}</p>
+          <p className="text-gray-600 text-sm">{shortDesc}</p>
 
-          {/* Speaker */}
-          <h3 className="text-lg text-gray-700 font-semibold mb-2">
-            {speaker}
-          </h3>
-
-          {/* Short description */}
-          <p className="text-gray-600">{shortDesc}</p>
-
-          {/* Button */}
           <button
-            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            className="mt-4 w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             onClick={handleViewDetails}
           >
             View Details
@@ -53,26 +45,27 @@ export default function WebinarCard({
         </div>
       </div>
 
-      {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full relative">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full relative text-gray-800">
             <button
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+              className="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl font-bold"
               onClick={() => setShowModal(false)}
             >
-              ✖
+              &times;
             </button>
-            <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-            <ul className="space-y-2 text-gray-700">
+
+            <h3 className="text-2xl font-semibold text-blue-900 mb-4">{title}</h3>
+
+            <ul className="space-y-3 text-sm">
               <li>
-                <strong>📅 Date:</strong> {date}
+                <span className="font-semibold text-blue-800">📅 Date:</span> {date}
               </li>
               <li>
-                <strong>📍 Place:</strong> {details.place}
+                <span className="font-semibold text-pink-700">📍 Place:</span> {details.place}
               </li>
               <li>
-                <strong>🔗 Meeting Link:</strong>{" "}
+                <span className="font-semibold text-purple-700">🔗 Meeting Link:</span>{" "}
                 <a
                   href={details.link}
                   target="_blank"
@@ -83,13 +76,13 @@ export default function WebinarCard({
                 </a>
               </li>
               <li>
-                <strong>🎯 Benefits:</strong> {details.benefits}
+                <span className="font-semibold text-green-700">🎯 Benefits:</span> {details.benefits}
               </li>
               <li>
-                <strong>👥 Who Should Attend:</strong> {details.audience}
+                <span className="font-semibold text-indigo-700">👥 Who Should Attend:</span> {details.audience}
               </li>
               <li>
-                <strong>✨ Features:</strong> {details.features}
+                <span className="font-semibold text-yellow-700">✨ Features:</span> {details.features}
               </li>
             </ul>
           </div>
