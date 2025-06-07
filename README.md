@@ -1,38 +1,24 @@
-# Babynama - Frontend Developer Intern Assignment
+# Babynama – Webinars Page
 
-Welcome to the Babynama internship assignment! This short project is designed to simulate a real-world task and help us understand your skills and thought process.
-
-**Objective:** Build a small, self-contained feature in Next.js.  
-**Time Allotment:** 2-4 hours.
+This is a simple Next.js page that shows upcoming webinars for new and expecting parents. Built as part of a feature to help users quickly browse Babynama’s live sessions.
 
 ---
 
-### **Part 1: Getting Started & The Task**
+## 🔗 Live URL
+https://babynama-webinar.vercel.app/
+---
 
-1.  **Repository Setup:** You have already created a repository from this template. Now, install the dependencies:
-    ```bash
-    npm install
-    ```
-2.  **The User Story:** Your goal is to implement the following feature:
-    > "As a busy parent exploring Babynama's resources, I want to see a simple, clear list of upcoming live webinars on a dedicated page so I can quickly see what's available."
+## ⚙️ Choices Made
 
-3.  **Your Implementation Tasks:**
-    * **Create a Page:** Build a new page at the `/webinars` route.
-    * **Display Data:** You don't need an API. Create a mock data array directly in your page file. The array should contain at least three webinar objects, each with an `id`, `title`, `speaker` (e.g., "Dr. Sumitra Meena"), and `date`. Render this data as a list of styled cards on the `/webinars` page.
-    * **Add Interactivity:** Add a "View Details" button to each card. When clicked, it should log the `id` of that webinar to the browser's console (e.g., `console.log("Viewing details for webinar ID: 3")`).
+I created a separate `WebinarCard` component to keep the code modular and clean. It helped in reusing the card structure and isolating UI logic like modals and event handling.
 
 ---
 
-### **Part 2: Submission**
+## 🧠 Roadblock & Learning
 
-After you've finished coding, please complete the following two steps.
+At first, I was confused about how to pass `id` to the button’s `onClick` and log it properly. I was trying to return the index with the map function but that was not working well so I ended up revisiting the code and mention the id in the arrray itself which was carrying the data of the webinars
 
-1.  **Deploy Your Work:** Deploy your project to Vercel (it's free).
-2.  **Complete this README:** **This is the most important step.** Edit this `README.md` file in your repository to include:
-    * **Live URL:** [Add your Vercel deployment link here]
-    * **Choices Made:** [Briefly explain one technical choice you made]
-    * **Roadblock & Learning:** [Describe one small thing you had to look up and how you solved it]
-    * **Screenshot:**
-        ![Your Screenshot Here](https://via.placeholder.com/600x400.png?text=Paste+Screenshot+of+Your+App+Here)
-
-To submit, please share the link to your finished GitHub repository with us. Good luck!
+```js
+const handleViewDetails = () => {
+  console.log(`Viewing details for webinar ID: ${id}`);
+}
